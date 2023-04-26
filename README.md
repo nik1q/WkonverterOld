@@ -1,2 +1,5 @@
 # Wkonverter
- Currency Converter
+ Currency Converter 
+
+This is a learning Project. 
+
