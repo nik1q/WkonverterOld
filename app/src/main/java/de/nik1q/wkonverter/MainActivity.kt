@@ -17,6 +17,9 @@ import java.util.Properties
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+
+
     private lateinit var currencyApiService: CurrencyApiService
 
     override fun onCreate(savedInstanceState: Bundle?) {
