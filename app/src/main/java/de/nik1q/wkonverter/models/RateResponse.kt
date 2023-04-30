@@ -5,3 +5,5 @@ data class RateResponse(
     val exchange_rates: ExchangeRates,
     val last_updated: Int
 )
+
+
