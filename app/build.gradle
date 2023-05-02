@@ -37,16 +37,6 @@ android {
 
 }
 
-def apikey = ""
-Properties props = new Properties()
-try {
-    props.load(new FileInputStream(project.rootProject.file("local.properties")))
-    apikey = props.getProperty("API_KEY")
-} catch (Exception e) {
-    throw new RuntimeException("API key not found", e)
-}
-
-
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.10.0'

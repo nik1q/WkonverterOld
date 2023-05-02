@@ -1,8 +1,6 @@
 package de.nik1q.wkonverter.repository
 
 import de.nik1q.wkonverter.api.ApiClient
-import de.nik1q.wkonverter.api.ApiService
-import de.nik1q.wkonverter.models.ExchangeRates
 import de.nik1q.wkonverter.models.RateResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,7 +17,6 @@ class ExchangeRatesRepository(private val apiKey: String) {
                     val rateResponse = response.body()
                     onResult(rateResponse, null)
                 } else {
-                    // обработка ошибок
                     onResult(null, Exception("Error: ${response.code()}"))
                 }
             }
