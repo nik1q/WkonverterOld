@@ -2,12 +2,13 @@ package de.nik1q.wkonverter.database
 
 import android.content.Context
 import androidx.room.*
-import de.nik1q.wkonverter.converters.MapTypeConverter
+
+
 
 import de.nik1q.wkonverter.models.ExchangeRates
 
-@Database(entities = [ExchangeRates::class], version = 1)
-@TypeConverters(MapTypeConverter::class)
+
+@Database(entities = [ExchangeRateEntity::class], version = 1)
 abstract class ExchangeRatesDatabase : RoomDatabase() {
 
     abstract fun exchangeRatesDao(): ExchangeRatesDao

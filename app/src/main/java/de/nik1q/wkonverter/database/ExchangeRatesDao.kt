@@ -8,12 +8,12 @@ import de.nik1q.wkonverter.models.ExchangeRates
 interface ExchangeRatesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertOrUpdate(exchangeRates: ExchangeRates)
+    suspend fun insertOrUpdate(exchangeRates: ExchangeRateEntity)
 
     @Delete
-    suspend fun delete(exchangeRates: ExchangeRates)
+    suspend fun delete(exchangeRates: ExchangeRateEntity)
 
     @Query("SELECT * FROM exchange_rates WHERE base = :base")
-    fun getExchangeRatesLiveData(base: String): LiveData<ExchangeRates>
+    fun getExchangeRatesLiveData(base: String): LiveData<ExchangeRateEntity>
 
 }
