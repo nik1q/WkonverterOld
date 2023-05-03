@@ -3,7 +3,6 @@ package de.nik1q.wkonverter.repository
 import de.nik1q.wkonverter.api.ApiClient
 import de.nik1q.wkonverter.database.ExchangeRateEntity
 import de.nik1q.wkonverter.database.ExchangeRatesDao
-import de.nik1q.wkonverter.models.ExchangeRates
 import de.nik1q.wkonverter.models.RateResponse
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -14,6 +13,7 @@ import retrofit2.Response
 
 class ExchangeRatesRepository(private val apiKey: String, private val exchangeRatesDao: ExchangeRatesDao) {
     private val apiService = ApiClient().apiService
+
     fun getExchangeRates(base: String, onResult: (ExchangeRateEntity?, Throwable?) -> Unit) {
         apiService.getExchangeRates(apiKey, base).enqueue(object : Callback<RateResponse> {
             override fun onResponse(call: Call<RateResponse>, response: Response<RateResponse>) {

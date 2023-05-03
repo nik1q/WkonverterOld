@@ -2,7 +2,6 @@ package de.nik1q.wkonverter.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import de.nik1q.wkonverter.models.ExchangeRates
 
 @Dao
 interface ExchangeRatesDao {

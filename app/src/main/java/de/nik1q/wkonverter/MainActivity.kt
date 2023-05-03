@@ -2,14 +2,11 @@ package de.nik1q.wkonverter
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import de.nik1q.wkonverter.database.ExchangeRatesDatabase
 import de.nik1q.wkonverter.databinding.ActivityMainBinding
 import de.nik1q.wkonverter.models.LastUpdatedHelper
-import de.nik1q.wkonverter.repository.ExchangeRatesRepository
 import de.nik1q.wkonverter.viewmodel.ExchangeRatesViewModel
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -34,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.btGetKurs.setOnClickListener {
             viewModel.getExchangeRates("EUR").observe(this, Observer { exchangeRates ->
                 val base = exchangeRates.base
-                val rates = exchangeRates.exchange_rates
+                val rates = exchangeRates
                 val lastUpdated = exchangeRates.last_updated
                 // processing date into a log
                 Log.d("Exchange Rates", "Base currency: $base")
@@ -47,5 +44,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
-

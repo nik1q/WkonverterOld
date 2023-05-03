@@ -3,11 +3,6 @@ package de.nik1q.wkonverter.database
 import android.content.Context
 import androidx.room.*
 
-
-
-import de.nik1q.wkonverter.models.ExchangeRates
-
-
 @Database(entities = [ExchangeRateEntity::class], version = 1)
 abstract class ExchangeRatesDatabase : RoomDatabase() {
 
